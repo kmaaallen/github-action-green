@@ -13,7 +13,7 @@ jobs:
         uses: ./ # Uses an action in the root directory
         id: api
         with:
-          url: "https://kmaaallen.github.io/graphql-pokemon/"
+          url: "https%3A%2F%2Fkmaaallen.github.io%2Fgraphql-pokemon%2F"
       # Use the output from the `hello` step
       - name: Get the API output
         run: echo "The returned response is ${{ steps.api.outputs.stats }}"
