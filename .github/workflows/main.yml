@@ -1,0 +1,15 @@
+on: [push]
+
+jobs:
+  hello_world_job:
+    runs-on: ubuntu-latest
+    name: Testing
+    steps:
+      - name: Step 1
+        id: api
+        uses: kmaaallen/github-action-green@v1.1
+        with:
+          url: 'https://kmaaallen.github.io/graphql-pokemon/'
+      # Use the output from the `hello` step
+      - name: Get the API output
+        run: echo "The returned response is ${{ steps.api.outputs.stats }}"
