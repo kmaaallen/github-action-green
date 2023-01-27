@@ -1,0 +1,16 @@
+name: "Green check"
+description: "Workflow to call Website Carbon API and return stats from url"
+
+on: [push]
+
+inputs:
+  url: # url of site to check
+    description: "Url of site to check"
+    required: true
+    default: ${{secrets.PAGES_URL}}
+outputs:
+  stats: # Website Carbon API results
+    description: "Website Carbon API results"
+runs:
+  using: "node16"
+  main: "index.js"
