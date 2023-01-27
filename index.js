@@ -9,9 +9,7 @@ try {
 
   fetch(`https://api.websitecarbon.com/site?url=${url}`)
     .then((response) => response.json())
-    .then((data) => console.log(data));
-
-  setOutput("stats", data);
+    .then((data) => setOutput("stats", data));
 
   // Get the JSON webhook payload for the event that triggered the workflow
   const payload = JSON.stringify(context.payload, undefined, 2);
