@@ -1,15 +1,19 @@
 on: [push]
 
 jobs:
-  hello_world_job:
+  website_carbon_job:
     runs-on: ubuntu-latest
-    name: Testing
+    name: A job to call website carbon api
     steps:
-      - name: Step 1
+      # To use this repository's private action,
+      # you must check out the repository
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Hello world action step
+        uses: ./ # Uses an action in the root directory
         id: api
-        uses: kmaaallen/github-action-green@v1.1
         with:
-          url: 'https://kmaaallen.github.io/graphql-pokemon/'
+          url: "https://kmaaallen.github.io/graphql-pokemon/"
       # Use the output from the `hello` step
       - name: Get the API output
         run: echo "The returned response is ${{ steps.api.outputs.stats }}"
