@@ -11,5 +11,5 @@ outputs:
   stats: # Website Carbon API results
     description: "Website Carbon API results"
 runs:
-  using: "node18"
+  using: "node16"
   main: "index.js"
