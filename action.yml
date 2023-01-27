@@ -7,7 +7,6 @@ inputs:
   url: # url of site to check
     description: "Url of site to check"
     required: true
-    default: ${{secrets.PAGES_URL}}
 outputs:
   stats: # Website Carbon API results
     description: "Website Carbon API results"
